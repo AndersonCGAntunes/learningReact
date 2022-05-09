@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, {useState} from "react"
 import './App.css';
+import MyBody from './myBody';
 
 function App() {
+
+// useState pode ser tanto string quanto int, bool, array, etc
+  const [str, setStr] = useState('Olá, mundo');
+  function handleClick() {
+    setStr('Olá, planeta');
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>{str}</h2>
+      
+      <MyBody conteudo=" Body 1"></MyBody>
+      <MyBody conteudo=" Body 2"></MyBody>
+      <MyBody conteudo=" Body 3"></MyBody>
     </div>
   );
 }
